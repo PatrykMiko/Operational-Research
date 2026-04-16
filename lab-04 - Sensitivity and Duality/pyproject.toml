@@ -1,0 +1,24 @@
+[project]
+name = "saport"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "networkx>=3.6.1",
+    "numpy>=2.4.2",
+    "ortools>=9.15.6755",
+    "pydot>=4.0.1",
+    "pytest>=9.0.2",
+    "pytest-mock>=3.15.1",
+    "pytest-timeout>=2.4.0",
+    "types-networkx>=3.6.1.20251220",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "ruff>=0.15.0",
+]
+
+[[tool.mypy.overrides]]
+module = ["ortools.math_opt.python.mathopt"]
+follow_untyped_imports = true
